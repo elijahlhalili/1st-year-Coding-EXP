@@ -18,7 +18,7 @@ int main ()
 
         
         printf("Enter your name: ");
-        scanf("%s", &name[i]);
+        scanf(" %[^\n]s", name[i]);
 
         printf("Score of Quiz 1: ");
         scanf(" %d", &q1[i]);
@@ -31,12 +31,12 @@ int main ()
 
     }
 
-    printf("\n================================================\n");
-    printf("Name\tQuiz 1\tQuiz 2\tQuiz 3\tAverage\tRemarks\n");
-    printf("================================================\n");
+    printf("\n=========================================================\n");
+    printf("%-15s%-8s%-8s%-8s%-8s%-10s\n", "Name", "Quiz 1", "Quiz 2", "Quiz 3", "Average", "Remarks");
+    printf("===========================================================\n");
 
     for (i = 0; i < students; i++){
-        printf("%s\t%d\t%d\t%d\t%.2f\t%s\n", name[i], q1[i], q2[i], q3[i], average[i], (average[i] >= 75.00) ? "Passed" : "Failed" );
+        printf("%-15s%-8d%-8d%-8d%-8.2f%-10s\n", name[i], q1[i], q2[i], q3[i], average[i], (average[i] >= 75.00) ? "Passed" : "Failed" );
     }
 
 
